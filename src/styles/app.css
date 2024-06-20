@@ -1,18 +1,34 @@
+body {
+    background-color: #d7dadc;
+}
 .todo-app {
-    width: 300px;
+   
+    width: 400px;
+    height: 100px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
+    background-color: rgb(181, 170, 170);
+    border-radius: 500px;
+    
+  }
+
+  h1 {
+    color: #92490a;
   }
   
   header {
     text-align: center;
     margin-bottom: 20px;
+    
   }
   
   header input {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
+    color: rgb(15, 14, 14);
+    font-weight: bold;
+    
   }
   
   ul {
@@ -44,5 +60,13 @@
     border: none;
     color: #007bff;
     cursor: pointer;
-  }
+
+    
+
+    
+}
   
+
+
+
+

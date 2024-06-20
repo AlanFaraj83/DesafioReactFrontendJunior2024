@@ -51,7 +51,7 @@ const App: React.FC = () => {
         <h1>Todos</h1>
         <input
           type="text"
-          placeholder="What needs to be done?"
+          placeholder="Oque precisa ser feito?"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
           onKeyPress={addTodo}

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/todoItem.css'
 
 interface TodoItemProps {
   todo: {
@@ -20,7 +21,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, toggleTodo, removeTodo }) => 
           onChange={() => toggleTodo(todo.id)}
         />
         <label>{todo.title}</label>
-        <button onClick={() => removeTodo(todo.id)}>Remove</button>
+        <button className='butaoRemove' onClick={() => removeTodo(todo.id)}>Remove</button>
       </div>
     </li>
   );
