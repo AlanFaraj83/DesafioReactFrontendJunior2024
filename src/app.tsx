@@ -32,7 +32,7 @@ const App: React.FC = () => {
   };
 
   const toggleTodo = (id: number) => {
-    setTodos(todos.map(todo => 
+    setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
@@ -47,25 +47,41 @@ const App: React.FC = () => {
 
   return (
     <div className="todo-app">
-      <header>
-        <h1>Todos</h1>
-        <input
-          type="text"
-          placeholder="Oque precisa ser feito?"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          onKeyPress={addTodo}
-        />
-      </header>
-      <ul>
-        {todos.map(todo => (
-          <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} removeTodo={removeTodo} />
-        ))}
-      </ul>
-      <footer>
-        <span>{todos.filter(todo => !todo.completed).length} items left</span>
-        <button onClick={clearCompleted}>Clear completed</button>
-      </footer>
+
+      <div className="wrapper">
+        <header>
+          <h1>todos</h1>
+          <input
+            type="text"
+            placeholder="Oque precisa ser feito?"
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+            onKeyPress={addTodo}
+          />
+        </header>
+
+        <main>
+          {todos.length > 0 && (
+            <ul>
+              {todos.map((todo) => (
+                <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  toggleTodo={toggleTodo}
+                  removeTodo={removeTodo}
+                />
+              ))}
+            </ul>
+          )}
+        </main>
+
+        <footer>
+          <span>{todos.filter((todo) => !todo.completed).length} items left</span>
+
+          <button onClick={clearCompleted}>Clear completed</button>
+        </footer>
+      </div>
+
     </div>
   );
 };
